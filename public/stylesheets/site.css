@@ -1,0 +1,36 @@
+body{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.note {
+    float:left;
+    width:30%;
+    border-radius: 4px;
+    -moz-border-radius:4px 4px 4px 4px;
+    border:1px solid #999999;
+    font-size:16px;
+    margin:0 7px 14px;
+    padding:10px 12px;
+    position:relative;
+}
+
+.note .text {
+    height:170px;
+    overflow:hidden;
+}
+
+.text h2{
+    margin-top: 0;
+}
+
+.controls{
+    font-size:0.8em;
+    position:absolute;
+    bottom:9px;
+}
+
+.shadow {
+  -moz-box-shadow: 2px 2px 5px #ccc;
+  -webkit-box-shadow: 2px 2px 5px #ccc;
+  box-shadow: 2px 2px 5px #ccc;
+}
