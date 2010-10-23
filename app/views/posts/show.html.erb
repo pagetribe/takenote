@@ -7,7 +7,14 @@
 
 <p>
   <b>Body:</b>
-  <%= @post.body %>
+  <%= raw textilize(coderay(@post.body)) %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <% @post.tags.each do |tag|%>
+    <%= tag.name %>
+  <% end -%>
 </p>
 
 

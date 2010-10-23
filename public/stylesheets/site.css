@@ -8,7 +8,7 @@ body{
     border-radius: 4px;
     -moz-border-radius:4px 4px 4px 4px;
     border:1px solid #999999;
-    font-size:16px;
+    font-size:15px;
     margin:0 7px 14px;
     padding:10px 12px;
     position:relative;
@@ -16,17 +16,36 @@ body{
 
 .note .text {
     height:170px;
-    overflow:hidden;
+    overflow: auto;
+    margin-bottom: 26px;
+}
+
+.text img{
+    width: 15px;
+    vertical-align: bottom;
 }
 
 .text h2{
     margin-top: 0;
 }
 
+.tags{
+    font-size: 0.6em;
+}
+
 .controls{
     font-size:0.8em;
     position:absolute;
     bottom:9px;
+}
+.controls img{
+    width: 15px;
+    vertical-align: bottom;
+    border: none;
+}
+.controls a:hover{
+    background-color:#ffffff;
+    border: 0.5px dotted #dedede;
 }
 
 .shadow {

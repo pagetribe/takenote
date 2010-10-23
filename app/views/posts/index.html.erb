@@ -8,11 +8,18 @@
       <div class="note shadow">
           <div class="text">
                 <h2><%= post.name %></h2>
-                <p><%= post.body %></p>
+                <p><%= raw textilize(coderay(post.body)) %></p>
+                <div class="tags">
+                  <%= image_tag("icons/black/tag.png", :alt => "show note") %>
+                  <% post.tags.each do |tag|%>
+                    <%= tag.name %>
+                  <% end -%>
+                </div>
+                
                 <div class="controls">
-                  <%= link_to 'Show', post %>
-                  <%= link_to 'Edit', edit_post_path(post) %>
-                  <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+                  <%= link_to image_tag("icons/black/full-screen.png", :alt => "show note"), post %>
+                  <%= link_to image_tag("icons/black/edit.png", :alt => "edit note"), edit_post_path(post) %>
+                  <%= link_to image_tag("icons/black/delete-item.png", :alt => "edit note"), post, :confirm => 'Are you sure you want to delete this note?', :method => :delete %>
                 </div>
           </div>
       </div>

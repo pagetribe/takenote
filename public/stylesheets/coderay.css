@@ -1,0 +1,42 @@
+.CodeRay {
+  background-color: #eee;
+  font-family: 'Courier New', 'Terminal', monospace;
+  color: #58585a;
+  padding: 3px 5px;
+  overflow: auto;
+  font-size: 12px;
+  margin: 12px 0;
+}
+
+span.CodeRay, .CodeRay pre { margin: 0; padding: 0; }
+
+ol.CodeRay { margin: 0; padding: 10px 0 10px 40px; }
+
+table.CodeRay { display: block; }
+
+.CodeRay .line_numbers { padding-right: 10px; }
+
+.CodeRay .an { color:#007d8e }                      /* html attribute */
+.CodeRay .c  { color:#708c90; font-style: italic; } /* comment */
+.CodeRay .ch { color:#d2222e }                      /* escaped character */
+.CodeRay .cl { color:#007d8e; }                         /* class */
+.CodeRay .co { color:#007d8e }                         /* constant */
+.CodeRay .fl { color:#A4C260 }                      /* float */
+.CodeRay .gv { color:#007d8e }                      /* global variable */
+.CodeRay .idl { color: #007d8e; }
+.CodeRay .iv { color:#35afc0 }                      /* instance variable */
+.CodeRay .pp { color:#6c9cbd }                      /* doctype */
+.CodeRay .r  { color:#0000ff }                      /* keyword */
+.CodeRay .rx { color:#c0000d }                      /* regex */
+.CodeRay .s  { color:#c0000d }                      /* string */
+.CodeRay .sy { color:#c0000d }                      /* symbol */
+.CodeRay .ta { color:#0000ff }                      /* html tag */
+.CodeRay .pc { color: #0000ff; }
+.CodeRay .v { color: #0000ff; }
+.CodeRay .il { color: #58585a; }
+
+.CodeRay .di, .CodeRay .ty, .CodeRay .kw { color: #0000ff; }
+.CodeRay .pt, .CodeRay .ex { color: #007d8e; }
+
+.CodeRay .ke { color: #007d8e; }
+.CodeRay .cv { color: #0000ff; }
