@@ -1,8 +1,12 @@
 Takenote::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :tags
+  end
 
-  get "home/index"
-
+  resources :tags do
+    resources :posts
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

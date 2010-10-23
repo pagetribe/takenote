@@ -1,0 +1,9 @@
+<h2>tag listing</h2>
+<% @tags.each do |tag| %>
+  <p>
+    <%= tag.name %>
+    <%= link_to "Show", tag %>
+    <%= link_to "Edit", edit_tag_path(tag) %>
+    <%= link_to "Destroy", tag, :confirm => 'Are you sure you want to delete this tag?', :method => :delete %>
+  </p>
+<% end -%>
