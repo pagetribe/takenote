@@ -33,6 +33,12 @@ body{
     font-size: 0.6em;
 }
 
+.used_tag{
+    background-color: #dedede;
+    display: inline-block;
+    text-decoration: none;
+}
+
 .controls{
     font-size:0.8em;
     position:absolute;

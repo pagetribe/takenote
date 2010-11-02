@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   attr_writer :tag_names # used when edit is called to fill the tags in form already assigned
 	after_save :assign_tags # callback
 	
-	scope :find_tagged_with, lambda { |tag| joins(:tags).where(:tags => {:name => tag})}
+	scope :tagged_with, lambda { |tag| joins(:tags).where(:tags => {:name => tag})}
 	# TODO: should this scope be here or in the tags model? & how can i use the ? like ("price < ?", price) + how does lambda work
   #	scope :tagged_with, joins(:tags).where(:tags => {:name => "undo"})
   #	scope :cheaper_than, lambda { |price| where("price < ?", price) }  

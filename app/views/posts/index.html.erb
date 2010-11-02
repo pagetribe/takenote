@@ -12,7 +12,7 @@
                 <div class="tags">
                   <%= image_tag("icons/black/tag.png", :alt => "show note") %>
                   <% post.tags.each do |tag|%>
-                    <%= tag.name %>
+                    <%= link_to tag.name, notes_url(:filter => tag.name) %>
                   <% end -%>
                 </div>
                 

@@ -2,8 +2,14 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
-
+#    if !params[:filter].blank?
+      
+    if params[:filter].present?
+      @posts = Post.tagged_with(params[:filter]) # allow filtering via tag name if :filter is present in url
+    else
+      @posts = Post.all
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }
@@ -35,6 +41,8 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @tags = Tag.order("name ASC")
+    @used_tags = @post.tags.collect {|tag| tag.name} # get the tags that are used
   end
 
   # POST /posts

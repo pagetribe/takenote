@@ -19,6 +19,15 @@
     <%= f.label :tag_names %><br />
     <%= f.text_field :tag_names %>
   </div>
+  <div class="tags">
+    <% @tags.each do |tag| %>
+      <% if @used_tags.include?(tag.name) %> <!-- if tag is used add class -->
+          <a href=#><span class="used_tag"><%= tag.name %></span></a>
+      <% else -%>
+        <a href=#><span><%= tag.name %></span></a>
+      <% end -%>
+    <% end -%>
+  </div>
   <div class="field">
     <%= f.label :body %><br />
     <%= f.text_area :body %>

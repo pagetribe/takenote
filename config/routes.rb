@@ -1,11 +1,14 @@
 Takenote::Application.routes.draw do
+  
+  match "notes" => "posts#index"
+  
   resources :posts do
     resources :tags
   end
 
-  resources :tags do
-    resources :posts
-  end
+#  resources :tags do
+#    resources :posts
+#  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
