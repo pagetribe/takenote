@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    $("textarea#post_body").resizable();
+
     $(".tags span").click(function(){
         var tag;
         // if there is already a tag add a space
