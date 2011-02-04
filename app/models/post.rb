@@ -10,11 +10,10 @@ class Post < ActiveRecord::Base
 	after_save :assign_tags # callback
 	
 	scope :tagged_with, lambda { |tag| joins(:tags).where(:tags => {:name => tag})}
-	# TODO: should this scope be here or in the tags model? & how can i use the ? like ("price < ?", price) + how does lambda work
-  #	scope :tagged_with, joins(:tags).where(:tags => {:name => "undo"})
-  #	scope :cheaper_than, lambda { |price| where("price < ?", price) }  
-  #	where("hidden != ?", true)  
-	#Post.joins(:tags).where(:tags => {:name => "undo"})
+
+  def self.search(search) 
+       includes(:tags).where(["posts.name LIKE (?) OR tags.name LIKE (?) OR posts.body LIKE (?)","%#{search}%", "%#{search}%", "%#{search}%"])
+  end
 
 	
 	# accessor method

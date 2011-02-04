@@ -3,8 +3,11 @@ class PostsController < ApplicationController
   # GET /posts.xml
   def index
 #    if !params[:filter].blank?
-      
-    if params[:filter].present?
+    if params[:search].present?
+      @posts = Post.search(params[:search])
+#      @posts = Post.includes(:tags).where(["posts.name LIKE (?) OR tags.name LIKE (?) OR posts.body LIKE (?)","%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%"])
+#      @posts = Post.where("name LIKE ? OR body LIKE ?","%#{params[:search]}%", "%#{params[:search]}%")
+    elsif params[:filter].present?
       @posts = Post.tagged_with(params[:filter]) # allow filtering via tag name if :filter is present in url
     else
       @posts = Post.all

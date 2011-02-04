@@ -1,7 +1,17 @@
-<%= link_to 'New Post', new_post_path %>
-<br/>
-<br/>
-
+<ul id="nav">
+	<li><%= link_to 'New Post', new_post_path %></li>
+	<li>
+	  <% form_tag posts_path, :method => 'get', :id => 'search_field' do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+    <% end %>
+    </li>
+    <li>
+	  <% if params[:search] %>
+      <%= link_to 'Show All', posts_path,  :id => 'show_all' %>
+    <% end %>
+  </li>
+</ul>
 
 <div id="list">
       <% @posts.each do |post| %>
