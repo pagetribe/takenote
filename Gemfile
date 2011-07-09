@@ -37,5 +37,6 @@ group :development, :test do
 	gem 'spork'
 	gem 'launchy'
 	gem 'rspec'
+  gem 'ruby-debug19'
 	#   gem 'webrat'
 end

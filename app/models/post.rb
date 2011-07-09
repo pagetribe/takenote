@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 										
 	has_many :taggings, :dependent => :destroy
 	has_many :tags, :through => :taggings
+  belongs_to :category
 	
   attr_writer :tag_names # used when edit is called to fill the tags in form already assigned
 	after_save :assign_tags # callback
