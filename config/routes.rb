@@ -2,9 +2,14 @@ Takenote::Application.routes.draw do
   
   match "notes" => "posts#index"
   
+  resources :categories do
+    resources :posts
+  end
+
   resources :posts do
     resources :tags
   end
+
 
 #  resources :tags do
 #    resources :posts
